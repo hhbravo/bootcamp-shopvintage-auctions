@@ -1,7 +1,11 @@
 package com.shopvintage.auctions.persistence.entities;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
 public class Bidder {
     private Integer id;
+    @NotBlank(message = "El nombre no puede ser vacío")
     private String name;
     private String email;
 
@@ -13,6 +17,15 @@ public class Bidder {
 
     public Bidder() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Bidder{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 
     public Integer getId() {
